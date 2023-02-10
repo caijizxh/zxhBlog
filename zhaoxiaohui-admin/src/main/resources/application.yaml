@@ -1,0 +1,32 @@
+server:
+  port: 8989
+spring:
+  datasource:
+    password: root
+    username: root
+    url: jdbc:mysql://localhost:3306/myblog?serverTimezone=UTC&useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  servlet:
+    multipart:
+      max-file-size: 2MB
+      max-request-size: 10MB
+  mvc:
+    hiddenmethod:
+      filter:
+        enabled: true
+
+
+mybatis-plus:
+  configuration:
+    # 日志
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: delFlag
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+      id-type: auto
+oss:
+  accessKey: sG7XIKD586JaEGrOJ2BU6j6jqzfh9-UCqyDkuBnn
+  secretKey: wB44z5P6XoqnvrjIQgOPC46ibYUGgxsSMciFSRyp
+  bucket: zxh-myblog-test
